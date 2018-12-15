@@ -9,5 +9,5 @@ dependencies {
     compile 'org.jetbrains:annotations-java5:15.0'
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = build_versions.java
+targetCompatibility = build_versions.java

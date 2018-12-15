@@ -8,5 +8,5 @@ dependencies {
     testImplementation deps.test.mockito
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = build_versions.java
+targetCompatibility = build_versions.java
