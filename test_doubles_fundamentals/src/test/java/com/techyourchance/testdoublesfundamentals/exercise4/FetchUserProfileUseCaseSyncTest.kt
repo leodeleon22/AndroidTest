@@ -1,0 +1,3 @@
+package com.techyourchance.testdoublesfundamentals.exercise4
+
+class FetchUserProfileUseCaseSyncTest
