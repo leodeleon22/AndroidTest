@@ -14,8 +14,16 @@ class StringDuplicatorTest {
     }
 
     @Test
+    @DisplayName("Given A When duplicate Then result is AA")
     fun test2() {
-        val result = SUT.duplicate("a")
-        assertEquals("aa",result)
+        val result = SUT.duplicate("A")
+        assertEquals("AA",result)
+    }
+
+    @Test
+    @DisplayName("Given a long string When duplicate Then return a duplicated String")
+    fun test3() {
+        val result = SUT.duplicate("Leonardo Deleon")
+        assertEquals("Leonardo DeleonLeonardo Deleon", result)
     }
 }
