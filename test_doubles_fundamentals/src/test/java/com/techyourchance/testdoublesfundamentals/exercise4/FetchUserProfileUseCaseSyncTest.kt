@@ -50,7 +50,7 @@ class FetchUserProfileUseCaseSyncTest {
 
     @Test
     @Throws(Exception::class)
-    fun `Given user id When endpoint general error Then dont cache`() {
+    fun `Given general error When get profile Then dont cache`() {
         endpoint.mStatus = EndpointResultStatus.GENERAL_ERROR
         SUT.fetchUserProfileSync(USER_ID)
         assertNull(cache.getUser(USER_ID))
@@ -58,7 +58,7 @@ class FetchUserProfileUseCaseSyncTest {
 
     @Test
     @Throws(Exception::class)
-    fun `Given user id When endpoint auth error Then dont cache`() {
+    fun `Given auth error When get profile Then dont cache`() {
         endpoint.mStatus = EndpointResultStatus.AUTH_ERROR
         SUT.fetchUserProfileSync(USER_ID)
         assertNull(cache.getUser(USER_ID))
@@ -66,7 +66,7 @@ class FetchUserProfileUseCaseSyncTest {
 
     @Test
     @Throws(Exception::class)
-    fun `Given user id When endpoint server error Then dont cache`() {
+    fun `Given server error When get profile Then dont cache`() {
         endpoint.mStatus = EndpointResultStatus.SERVER_ERROR
         SUT.fetchUserProfileSync(USER_ID)
         assertNull(cache.getUser(USER_ID))
@@ -89,7 +89,7 @@ class FetchUserProfileUseCaseSyncTest {
 
     @Test
     @Throws(Exception::class)
-    fun `Given user id When auth error Then return failure`() {
+    fun `Given auth error When get profile Then return failure`() {
         endpoint.mStatus = EndpointResultStatus.AUTH_ERROR
         val result = SUT.fetchUserProfileSync(USER_ID)
         assertEquals(UseCaseResult.FAILURE, result)
@@ -97,7 +97,7 @@ class FetchUserProfileUseCaseSyncTest {
 
     @Test
     @Throws(Exception::class)
-    fun `Given user id When general error Then return failure`() {
+    fun `Given general error When get profile Then return failure`() {
         endpoint.mStatus = EndpointResultStatus.GENERAL_ERROR
         val result = SUT.fetchUserProfileSync(USER_ID)
         assertEquals(UseCaseResult.FAILURE, result)
@@ -105,7 +105,7 @@ class FetchUserProfileUseCaseSyncTest {
 
     @Test
     @Throws(Exception::class)
-    fun `Given user id When network error Then return error`() {
+    fun `Given network error When get profile Then return error`() {
         endpoint.mIsNetworkError = true
         val result = SUT.fetchUserProfileSync(USER_ID)
         assertEquals(UseCaseResult.NETWORK_ERROR, result)
@@ -113,16 +113,10 @@ class FetchUserProfileUseCaseSyncTest {
 
     @Test
     @Throws(Exception::class)
-    fun `Given user id When error Then dont cache user`() {
+    fun `Given auth error When get profile Then dont cache user`() {
         endpoint.mStatus = EndpointResultStatus.AUTH_ERROR
         SUT.fetchUserProfileSync(USER_ID)
         assertNull(cache.getUser(USER_ID))
-    }
-
-    @Test
-    @Throws(Exception::class)
-    fun `Given user id When get profile Then check cache`() {
-        SUT.fetchUserProfileSync(USER_ID)
     }
 
     private class UserProfileHttpEndpointSyncTd: UserProfileHttpEndpointSync {
