@@ -1,9 +1,11 @@
 apply plugin: 'java-library'
+apply plugin: 'kotlin'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.12.0'
+    implementation deps.kotlin.stdlib
+    testImplementation deps.test.junit
+    testImplementation deps.test.mockito
     compile 'org.jetbrains:annotations-java5:15.0'
 }
 

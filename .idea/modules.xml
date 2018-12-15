@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mockito_fundamentals/mockito_fundamentals.iml" filepath="$PROJECT_DIR$/mockito_fundamentals/mockito_fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test_doubles_fundamentals/test_doubles_fundamentals.iml" filepath="$PROJECT_DIR$/test_doubles_fundamentals/test_doubles_fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test_driven_development/test_driven_development.iml" filepath="$PROJECT_DIR$/test_driven_development/test_driven_development.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unit-testing-in-android-course.iml" filepath="$PROJECT_DIR$/unit-testing-in-android-course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unit_testing_fundamentals/unit_testing_fundamentals.iml" filepath="$PROJECT_DIR$/unit_testing_fundamentals/unit_testing_fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unit_testing_in_android/unit_testing_in_android.iml" filepath="$PROJECT_DIR$/unit_testing_in_android/unit_testing_in_android.iml" />
+    </modules>
+  </component>
+</project>
