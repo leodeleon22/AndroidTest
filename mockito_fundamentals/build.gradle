@@ -4,8 +4,12 @@ apply plugin: 'kotlin'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.kotlin.stdlib
-    testImplementation deps.test.junit4
-    testImplementation deps.test.mockito
+    testImplementation deps.test.mockk
+    testImplementation deps.test.junit5
+    testRuntimeOnly deps.test.junitEngine
+}
+test {
+    useJUnitPlatform()
 }
 
 sourceCompatibility = build_versions.java
