@@ -4,7 +4,7 @@ apply plugin: 'kotlin'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.kotlin.stdlib
-    testImplementation deps.test.junit
+    testImplementation deps.test.junit4
     testImplementation deps.test.mockito
     compile 'org.jetbrains:annotations-java5:15.0'
 }

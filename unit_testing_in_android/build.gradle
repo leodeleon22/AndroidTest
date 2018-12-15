@@ -5,15 +5,12 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion build_versions.target_sdk
-
     defaultConfig {
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -28,15 +25,16 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = build_versions.java
+        targetCompatibility = build_versions.java
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation deps.androidx.appcompat
     implementation deps.kotlin.stdlib
-
-
-    testImplementation deps.test.junit
+    testImplementation deps.test.junit4
     testImplementation deps.test.mockito
 }
